@@ -1,327 +1,332 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Era Uma Vez Depois Do Fim - DEMO</title>
-    
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons via CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts: Crimson Text -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Configurações Customizadas do Tailwind e CSS extra -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        crimson: ['"Crimson Text"', 'serif'],
-                        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        zinc: {
-                            950: '#09090b',
-                            900: '#18181b',
-                            800: '#27272a',
-                            // ... outras cores já vêm por padrão no Tailwind
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .bg-vignette { 
-            background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(9,9,11,1) 100%); 
-        }
-        ::selection {
-            background-color: #7f1d1d; /* red-900 */
-            color: #ffffff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Elder’s Tower</title>
+
+<style>
+
+img {
+max-width:100%;
+height:auto;
+}
+
+html {
+
+font-size:clamp(12px, 1vw, 22px);
+
+}
+
+body {
+
+min-height:100vh;
+overflow-x:hidden;
+
+}
+
+.rodape {
+
+position:relative;
+margin-top:0vh;
+width:100%;
+
+font-size:0.8vw;
+color:#8a6b2f;
+
+opacity:0.7;
+letter-spacing:1px;
+
+}
+
+body {
+
+/* vinheta dourada fantasy */
+
+background:
+radial-gradient(circle at center,
+rgba(0,0,0,0) 80%,
+rgba(214,184,124,0.08) 85%,
+rgba(214,184,124,0.25) 100%),
+black;
+
+color:#d6b87c;
+font-family:Georgia, serif;
+
+margin:0;
+text-align:center;
+
+padding-top:30px;
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+margin-top:3vh;
+width:15vw;
+
+}
+
+
+/* FRASE */
+
+.frase {
+
+margin-top:2vh;
+font-size:1vw;
+max-width:42vw;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+
+/* CHOOSE */
+
+.choose {
+
+margin-top:4vh;
+font-size:1.7vw;
+
+}
+
+
+/* SETAS */
+
+.setas {
+
+display:flex;
+justify-content:center;
+gap:1.5vw;
+margin-top:1vh;
+
+}
+
+.setas img {
+
+width:3.6vw;
+
+}
+
+
+/* PERGAMINHOS */
+
+.pergaminhos {
+
+display:flex;
+justify-content:center;
+gap:1vh;
+margin-top:0vw;
+flex-wrap:wrap;
+
+}
+
+.pergaminho {
+
+position:relative;
+width:22vw;
+cursor:pointer;
+transition:transform 0.35s ease;
+
+}
+
+.pergaminho:hover {
+
+transform:scale(1.12);
+
+}
+
+.pergaminho img {
+
+width:100%;
+
+}
+
+
+/* LIVRO */
+
+.livro {
+
+position:absolute;
+
+right:26vw;   /* antes 500px */
+top:6.5vh;     /* antes 80px */
+
+width:10.4vw; /* antes 200px */
+
+}
+
+
+/* LINKS SOBRE LIVRO */
+
+.linksLivroEsquerda {
+
+position:absolute;
+
+top:9vh;
+left:63.8vw;
+
+font-size:0.85vw;
+font-family:Georgia, serif;
+color:#4a2c00;
+
+}
+
+.linksLivroDireita {
+
+position:absolute;
+
+top:9vh;
+left:69vw;
+
+font-size:0.85vw;
+font-family:Georgia, serif;
+color:#4a2c00;
+
+}
+
+.linksLivroEsquerda a,
+.linksLivroDireita a {
+
+display:block;
+margin:10px 0;
+text-decoration:none;
+color:#4a2c00;
+
+/* animação suave */
+transition:transform 0.2s ease, color 0.2s ease;
+
+}
+
+
+.linksLivroEsquerda a:hover,
+.linksLivroDireita a:hover {
+
+color:#c89b3c;
+
+/* cresce 10% */
+transform:scale(1.1);
+
+}
+
+</style>
+
 </head>
-<body class="min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-red-900 selection:text-white">
 
-    <!-- Navbar Fixa -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent border-b border-transparent">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 id="nav-title" class="font-crimson font-bold text-xl tracking-wider transition-colors duration-300 text-zinc-100">
-                THE ELDER'S TOWER
-            </h1>
-            <a href="#download" class="px-6 py-2 bg-red-900 hover:bg-red-700 text-zinc-100 font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_15px_rgba(153,27,27,0.5)] hover:shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-500/30">
-                Jogar Demo
-            </a>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img 
-                src="https://img.itch.zone/aW1nLzI2Mzc1MzQ4LmpwZw==/original/025WfC.jpg" 
-                alt="Capa Era Uma Vez Depois do Fim" 
-                class="w-full h-full object-cover object-top opacity-50"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-vignette"></div>
-        </div>
+<body>
 
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-            <div class="flex justify-center mb-6">
-                <i data-lucide="book-x" class="w-12 h-12 text-red-600 opacity-80"></i>
-            </div>
-            <h1 class="font-crimson text-5xl md:text-7xl font-bold text-zinc-100 mb-6 drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] leading-tight">
-                ERA UMA VEZ <br> <span class="text-red-600">DEPOIS DO FIM</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-zinc-400 font-crimson italic mb-10 max-w-2xl mx-auto">
-                "Não é um jogo de aventura... é uma história de sobrevivência."
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#download" class="flex items-center justify-center gap-2 px-8 py-4 bg-zinc-900 border border-red-900 hover:border-red-600 text-zinc-100 hover:text-red-500 transition-all group">
-                    <i data-lucide="download" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
-                    BAIXAR DEMO
-                </a>
-                <a href="#screenshots" class="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-zinc-800 hover:border-zinc-500 text-zinc-400 hover:text-zinc-100 transition-all">
-                    Ver Imagens
-                </a>
-            </div>
-        </div>
-    </header>
 
-    <!-- Main Content Grid -->
-    <main class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-16 relative z-20">
-        
-        <!-- Left Column -->
-        <div class="lg:col-span-2 space-y-16">
-            
-            <section class="space-y-6">
-                <h2 class="font-crimson text-3xl text-red-600 border-b border-zinc-800 pb-4 flex items-center gap-3">
-                    <i data-lucide="skull" class="w-8 h-8"></i> O Fim dos Contos de Fadas
-                </h2>
-                <div class="prose prose-invert prose-lg text-zinc-400 font-sans leading-relaxed">
-                    <p class="text-xl text-zinc-200 font-crimson">
-                        Era Uma Vez Depois do Fim é uma narrativa ambientada após o colapso irreversível das histórias que conhecemos.
-                    </p>
-                    <p>
-                        Neste mundo devastado, as páginas foram rasgadas. Personagens outrora gloriosos e esquecidos agora lutam por uma única coisa: a sobrevivência. Aqui, a luz não é sua aliada. Enquanto o sol brilha, <span class="text-red-500 font-bold">pesadelos diurnos</span> vagam implacáveis, caçando qualquer um que ouse cruzar seu caminho.
-                    </p>
-                </div>
-            </section>
+<!-- LIVRO -->
 
-            <section class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-red-900/10 rounded-full blur-3xl"></div>
-                <h3 class="font-crimson text-2xl text-zinc-100 mb-8 relative z-10">Nesta demonstração você deverá:</h3>
-                
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-                    <li class="flex items-start gap-4">
-                        <div class="p-2 bg-zinc-950 border border-zinc-800 text-red-500"><i data-lucide="sun" class="w-6 h-6"></i></div>
-                        <div>
-                            <h4 class="font-bold text-zinc-200">Sobreviver ao Dia</h4>
-                            <p class="text-sm text-zinc-500">Explore o abrigo dos sobreviventes com cautela enquanto a ameaça espreita lá fora.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="p-2 bg-zinc-950 border border-zinc-800 text-blue-500"><i data-lucide="moon" class="w-6 h-6"></i></div>
-                        <div>
-                            <h4 class="font-bold text-zinc-200">Explorar a Noite</h4>
-                            <p class="text-sm text-zinc-500">Aventure-se no mundo corrompido sob o véu da escuridão em busca de respostas.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="p-2 bg-zinc-950 border border-zinc-800 text-amber-600"><i data-lucide="backpack" class="w-6 h-6"></i></div>
-                        <div>
-                            <h4 class="font-bold text-zinc-200">Gerenciar o Caos</h4>
-                            <p class="text-sm text-zinc-500">Recursos são escassos. O tempo é seu maior inimigo. Cada decisão pesa.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="p-2 bg-zinc-950 border border-zinc-800 text-zinc-400"><i data-lucide="book-x" class="w-6 h-6"></i></div>
-                        <div>
-                            <h4 class="font-bold text-zinc-200">Investigar o Colapso</h4>
-                            <p class="text-sm text-zinc-500">Reúna pistas e descubra o que causou o fim das histórias e o início do pesadelo.</p>
-                        </div>
-                    </li>
-                </ul>
-                
-                <div class="mt-8 pt-6 border-t border-zinc-800 flex items-center gap-3 text-sm text-zinc-400 relative z-10">
-                    <i data-lucide="clock" class="w-4 h-4 text-red-900"></i>
-                    <span>Esta demo cobre cerca de <strong>2 horas de gameplay</strong>, englobando o início até o Dia 9 da jornada.</span>
-                </div>
-            </section>
+<img class="livro" src="imagens/LivroLinks.png">
 
-            <!-- Screenshots Grid -->
-            <section id="screenshots" class="space-y-6">
-                <h2 class="font-crimson text-3xl text-zinc-100 border-b border-zinc-800 pb-4">
-                    Vislumbres do Fim
-                </h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="relative group overflow-hidden border border-zinc-800 bg-zinc-900 col-span-2 md:col-span-2 aspect-video">
-                        <img src="https://img.itch.zone/aW1hZ2UvNDQyNjIzNi8yNjM3NTIwOS5wbmc=/original/vztIvO.png" alt="Screenshot 1" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 transition-colors pointer-events-none"></div>
-                    </div>
-                    <div class="relative group overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]">
-                        <img src="https://img.itch.zone/aW1hZ2UvNDQyNjIzNi8yNjM3NTIyNi5wbmc=/original/vybwQQ.png" alt="Screenshot 2" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 transition-colors pointer-events-none"></div>
-                    </div>
-                    <div class="relative group overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]">
-                        <img src="https://img.itch.zone/aW1hZ2UvNDQyNjIzNi8yNjM3NTI0OC5wbmc=/original/RIwXJ9.png" alt="Screenshot 3" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 transition-colors pointer-events-none"></div>
-                    </div>
-                    <div class="relative group overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]">
-                        <img src="https://img.itch.zone/aW1hZ2UvNDQyNjIzNi8yNjM3NTI3Mi5wbmc=/original/7VPHCH.png" alt="Screenshot 4" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 transition-colors pointer-events-none"></div>
-                    </div>
-                    <div class="relative group overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]">
-                        <img src="https://img.itch.zone/aW1hZ2UvNDQyNjIzNi8yNjM3NTMxNi5wbmc=/original/g1VRlA.png" alt="Screenshot 5" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 transition-colors pointer-events-none"></div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Download Area -->
-            <section id="download" class="bg-zinc-900/30 border border-red-900/30 p-8 md:p-12 relative mt-8">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-900 via-red-600 to-red-900 opacity-50"></div>
-                
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div>
-                        <h2 class="font-crimson text-4xl text-zinc-100 mb-2">Desperte no Pesadelo</h2>
-                        <p class="text-zinc-400 mb-4">A demo está disponível gratuitamente. O projeto está em desenvolvimento ativo e seu feedback é vital para a versão final.</p>
-                        <div class="flex items-center gap-4 text-sm text-zinc-500">
-                            <span class="flex items-center gap-1"><i data-lucide="info" class="w-4 h-4"></i> Build_Demo_v0.1.7z</span>
-                            <span>|</span>
-                            <span>797 MB</span>
-                            <span>|</span>
-                            <span>Windows 64-bit</span>
-                        </div>
-                    </div>
 
-                    <a href="https://the-elders-tower.itch.io/era-uma-vez-depois-do-fim-demo" target="_blank" class="w-full md:w-auto px-8 py-5 bg-red-900 hover:bg-red-700 text-zinc-100 font-bold tracking-wider flex items-center justify-center gap-3 transition-all border border-red-500/50 shadow-[0_0_20px_rgba(153,27,27,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]">
-                        <i data-lucide="download" class="w-6 h-6"></i>
-                        BAIXAR NO ITCH.IO
-                    </a>
-                </div>
+<!-- LINKS PAGINA ESQUERDA -->
 
-                <div class="mt-8 pt-8 border-t border-zinc-800/50">
-                    <h4 class="text-zinc-300 font-bold mb-4 flex items-center gap-2">
-                        <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i> Instruções de Instalação:
-                    </h4>
-                    <ol class="list-decimal list-inside text-zinc-500 space-y-2 marker:text-red-900">
-                        <li>Baixe o arquivo comprimido.</li>
-                        <li>Clique com o botão direito e selecione <strong class="text-zinc-300">"Extrair aqui"</strong>.</li>
-                        <li>Abra a pasta extraída.</li>
-                        <li>Execute o arquivo <strong class="text-red-400">EraUmaVezDepoisDoFim.exe</strong>.</li>
-                    </ol>
-                    <p class="text-xs text-zinc-600 mt-4 italic">Caso não consiga extrair, utilize o 7-Zip (gratuito). Não requer instalação prévia do jogo.</p>
-                </div>
-            </section>
+<div class="linksLivroEsquerda">
 
-        </div>
+<a href="https://www.youtube.com/@ATorreDoAnciao" target="_blank">YouTube</a>
 
-        <!-- Right Column (Sidebar) -->
-        <aside class="space-y-8 relative">
-            <div class="absolute inset-0 bg-zinc-900/20 border border-zinc-800/50 pointer-events-none -m-6 p-6 hidden lg:block"></div>
-            
-            <div class="relative">
-                <h3 class="font-crimson text-xl text-zinc-100 mb-6 uppercase tracking-widest border-b border-zinc-800 pb-2">Registros</h3>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex justify-between py-2 border-b border-zinc-800/50">
-                        <span class="text-zinc-500">Status</span>
-                        <span class="text-red-400">Em Desenvolvimento</span>
-                    </li>
-                    <li class="flex justify-between py-2 border-b border-zinc-800/50">
-                        <span class="text-zinc-500">Autor</span>
-                        <span class="text-zinc-300">The Elder's Tower</span>
-                    </li>
-                    <li class="flex justify-between py-2 border-b border-zinc-800/50">
-                        <span class="text-zinc-500">Gênero</span>
-                        <span class="text-zinc-300 text-right">Survival, RPG</span>
-                    </li>
-                    <li class="py-2 border-b border-zinc-800/50">
-                        <span class="text-zinc-500 block mb-2">Idiomas</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs">Português (BR)</span>
-                            <span class="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs">English</span>
-                            <span class="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs">Español</span>
-                            <span class="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs">中文 (Simpl.)</span>
-                        </div>
-                    </li>
-                    <li class="py-2">
-                        <span class="text-zinc-500 block mb-2">Tags do Apocalipse</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-zinc-400 bg-zinc-950 border border-red-900/30 px-2 py-1 hover:border-red-600 hover:text-red-400 transition-colors cursor-default">2D</span>
-                            <span class="text-xs text-zinc-400 bg-zinc-950 border border-red-900/30 px-2 py-1 hover:border-red-600 hover:text-red-400 transition-colors cursor-default">Dark Fantasy</span>
-                            <span class="text-xs text-zinc-400 bg-zinc-950 border border-red-900/30 px-2 py-1 hover:border-red-600 hover:text-red-400 transition-colors cursor-default">Demo</span>
-                            <span class="text-xs text-zinc-400 bg-zinc-950 border border-red-900/30 px-2 py-1 hover:border-red-600 hover:text-red-400 transition-colors cursor-default">Post-apocalyptic</span>
-                            <span class="text-xs text-zinc-400 bg-zinc-950 border border-red-900/30 px-2 py-1 hover:border-red-600 hover:text-red-400 transition-colors cursor-default">Story Rich</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+<a href="https://www.instagram.com/edvaldo_escritor" target="_blank">Instagram</a>
 
-            <div class="relative mt-12 bg-zinc-900/50 border border-zinc-800 p-6">
-                <h3 class="font-crimson text-xl text-zinc-100 mb-4 flex items-center gap-2">
-                    <i data-lucide="swords" class="w-5 h-5 text-zinc-500"></i> Diário de Desenvolvimento
-                </h3>
-                <div class="space-y-4">
-                    <a href="https://the-elders-tower.itch.io/era-uma-vez-depois-do-fim-demo/devlog" target="_blank" class="block group">
-                        <h4 class="text-zinc-300 group-hover:text-red-400 transition-colors">Primeira Correção.</h4>
-                        <p class="text-xs text-zinc-600 mt-1">Atualizado recentemente</p>
-                    </a>
-                    <div class="w-full h-px bg-zinc-800"></div>
-                    <a href="https://the-elders-tower.itch.io/era-uma-vez-depois-do-fim-demo/devlog" target="_blank" class="block group">
-                        <h4 class="text-zinc-300 group-hover:text-red-400 transition-colors">EM BREVE NA STEAM</h4>
-                        <p class="text-xs text-zinc-600 mt-1">Publicado recentemente</p>
-                    </a>
-                </div>
-            </div>
+<a href="https://www.reddit.com/user/eldoreste/" target="_blank">Reddit</a>
 
-        </aside>
-    </main>
+</div>
 
-    <!-- Footer minimalista e sombrio -->
-    <footer class="border-t border-zinc-900 bg-zinc-950 mt-20 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col items-center justify-center text-center">
-            <i data-lucide="book-x" class="w-8 h-8 text-zinc-800 mb-6"></i>
-            <p class="text-zinc-600 text-sm mb-4">
-                © 2026 The Elder's Tower. Todos os contos corrompidos.
-            </p>
-            <div class="flex gap-4 text-xs text-zinc-700">
-                <a href="https://the-elders-tower.itch.io" class="hover:text-red-500 transition-colors">Página do Desenvolvedor</a>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Scripts de Interação (Ícones e Efeito de Rolagem) -->
-    <script>
-        // Inicializa os ícones Lucide
-        lucide.createIcons();
 
-        // Efeito da barra de navegação ao rolar a página
-        const navbar = document.getElementById('navbar');
-        const navTitle = document.getElementById('nav-title');
+<!-- LINKS PAGINA DIREITA -->
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-zinc-950/95', 'border-red-900/50', 'backdrop-blur-sm');
-                navbar.classList.remove('bg-transparent', 'border-transparent');
-                
-                navTitle.classList.add('text-red-600');
-                navTitle.classList.remove('text-zinc-100');
-            } else {
-                navbar.classList.remove('bg-zinc-950/95', 'border-red-900/50', 'backdrop-blur-sm');
-                navbar.classList.add('bg-transparent', 'border-transparent');
-                
-                navTitle.classList.remove('text-red-600');
-                navTitle.classList.add('text-zinc-100');
-            }
-        });
-    </script>
+<div class="linksLivroDireita">
+
+<a href="https://discord.gg/gxEjfvEX" target="_blank">Discord</a>
+
+<a href="https://www.twitch.tv/the_elders_tower" target="_blank">Twitch</a>
+
+<a href="mailto:eldoreste@hotmail.com">E-mail</a>
+
+</div>
+
+
+
+<!-- LOGO -->
+
+<img class="logo" src="imagens/LogoTransparente.png">
+
+
+
+<!-- FRASE -->
+
+<div class="frase">
+
+At the top of the tower, the Elder sketches his enchantments, hoping that one day everyone will play the worlds he creates.
+
+</div>
+
+
+
+<!-- CHOOSE -->
+
+<div class="choose">
+
+Choose
+
+</div>
+
+
+
+<!-- SETAS -->
+
+<div class="setas">
+
+<img src="imagens/SetaEsquerda.png">
+
+<img src="imagens/SetaDireita.png">
+
+</div>
+
+
+
+<!-- PERGAMINHOS -->
+
+<div class="pergaminhos">
+
+<a href="elderstower.html">
+
+<div class="pergaminho">
+
+<img src="imagens/PergaminhoEsquerdo.png">
+
+</div>
+
+</a>
+
+
+<a href="eraumavez.html">
+
+<div class="pergaminho">
+
+<img src="imagens/PergaminhoDireito.png">
+
+</div>
+
+</a>
+
+</div>
+<div class="rodape">
+
+The Elder’s Tower • Created by Edvaldo Oliveira<br>
+A childhood dream becoming reality
+
+
+</div>
+
 </body>
 </html>
