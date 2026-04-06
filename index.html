@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,10 +10,24 @@
 
 <style>
 
+/* RESET SUAVE */
+
+* {
+
+box-sizing:border-box;
+
+}
+
+
 img {
+
 max-width:100%;
 height:auto;
+
 }
+
+
+/* TIPOGRAFIA GLOBAL RESPONSIVA */
 
 html {
 
@@ -20,28 +35,11 @@ font-size:clamp(12px, 1vw, 22px);
 
 }
 
+
 body {
 
 min-height:100vh;
 overflow-x:hidden;
-
-}
-
-.rodape {
-
-position:relative;
-margin-top:0vh;
-width:100%;
-
-font-size:0.8vw;
-color:#8a6b2f;
-
-opacity:0.7;
-letter-spacing:1px;
-
-}
-
-body {
 
 /* vinheta dourada fantasy */
 
@@ -63,6 +61,25 @@ padding-top:30px;
 }
 
 
+/* RODAPÉ */
+
+.rodape {
+
+position:relative;
+width:100%;
+
+font-size:0.8vw;
+
+color:#8a6b2f;
+
+opacity:0.7;
+letter-spacing:1px;
+
+margin-top:2vh;
+
+}
+
+
 /* LOGO */
 
 .logo {
@@ -78,10 +95,15 @@ width:15vw;
 .frase {
 
 margin-top:2vh;
+
 font-size:1vw;
+
 max-width:42vw;
+
 margin-left:auto;
 margin-right:auto;
+
+line-height:1.5;
 
 }
 
@@ -91,7 +113,10 @@ margin-right:auto;
 .choose {
 
 margin-top:4vh;
+
 font-size:1.7vw;
+
+letter-spacing:1px;
 
 }
 
@@ -101,11 +126,15 @@ font-size:1.7vw;
 .setas {
 
 display:flex;
+
 justify-content:center;
+
 gap:1.5vw;
+
 margin-top:1vh;
 
 }
+
 
 .setas img {
 
@@ -119,27 +148,37 @@ width:3.6vw;
 .pergaminhos {
 
 display:flex;
+
 justify-content:center;
+
 gap:1vh;
-margin-top:0vw;
+
 flex-wrap:wrap;
 
+margin-top:0.5vh;
+
 }
+
 
 .pergaminho {
 
 position:relative;
+
 width:22vw;
+
 cursor:pointer;
+
 transition:transform 0.35s ease;
 
 }
+
 
 .pergaminho:hover {
 
 transform:scale(1.12);
 
 }
+
 
 .pergaminho img {
 
@@ -148,16 +187,17 @@ width:100%;
 }
 
 
-/* LIVRO */
+/* LIVRO SOCIAL */
 
 .livro {
 
 position:absolute;
 
-right:26vw;   /* antes 500px */
-top:6.5vh;     /* antes 80px */
+right:26vw;
 
-width:10.4vw; /* antes 200px */
+top:6.5vh;
+
+width:10.4vw;
 
 }
 
@@ -169,36 +209,48 @@ width:10.4vw; /* antes 200px */
 position:absolute;
 
 top:7.5vh;
+
 right:31.7vw;
 
 font-size:0.85vw;
+
 font-family:Georgia, serif;
+
 color:#4a2c00;
 
 }
+
 
 .linksLivroDireita {
 
 position:absolute;
 
 top:7.5vh;
+
 right:27vw;
 
 font-size:0.85vw;
+
 font-family:Georgia, serif;
+
 color:#4a2c00;
 
 }
+
+
+/* LINKS INTERAÇÃO */
 
 .linksLivroEsquerda a,
 .linksLivroDireita a {
 
 display:block;
+
 margin:10px 0;
+
 text-decoration:none;
+
 color:#4a2c00;
 
-/* animação suave */
 transition:transform 0.2s ease, color 0.2s ease;
 
 }
@@ -209,8 +261,106 @@ transition:transform 0.2s ease, color 0.2s ease;
 
 color:#c89b3c;
 
-/* cresce 10% */
 transform:scale(1.1);
+
+}
+
+
+/* ===================== */
+/* MOBILE POLISH FINAL */
+/* ===================== */
+
+@media (max-width:768px) {
+
+
+.logo {
+
+width:45vw;
+
+}
+
+
+.frase {
+
+font-size:4vw;
+
+max-width:80vw;
+
+}
+
+
+.choose {
+
+font-size:6vw;
+
+margin-top:5vh;
+
+}
+
+
+.setas img {
+
+width:10vw;
+
+}
+
+
+.pergaminho {
+
+width:70vw;
+
+}
+
+
+.rodape {
+
+font-size:3vw;
+
+margin-top:5vh;
+
+}
+
+
+/* LIVRO SOCIAL MOBILE */
+
+.livro {
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+width:40vw;
+
+margin-top:25px;
+
+}
+
+
+/* LINKS MOBILE */
+
+.linksLivroEsquerda,
+.linksLivroDireita {
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+font-size:4vw;
+
+margin-top:12px;
+
+}
+
+
+.linksLivroEsquerda {
+
+margin-bottom:10px;
+
+}
 
 }
 
@@ -227,7 +377,6 @@ transform:scale(1.1);
 <img class="livro" src="imagens/LivroLinks.png">
 
 
-
 <!-- LINKS PAGINA ESQUERDA -->
 
 <div class="linksLivroEsquerda">
@@ -239,7 +388,6 @@ transform:scale(1.1);
 <a href="https://www.reddit.com/user/eldoreste/" target="_blank">Reddit</a>
 
 </div>
-
 
 
 <!-- LINKS PAGINA DIREITA -->
@@ -255,11 +403,9 @@ transform:scale(1.1);
 </div>
 
 
-
 <!-- LOGO -->
 
 <img class="logo" src="imagens/LogoTransparente.png">
-
 
 
 <!-- FRASE -->
@@ -271,7 +417,6 @@ At the top of the tower, the Elder sketches his enchantments, hoping that one da
 </div>
 
 
-
 <!-- CHOOSE -->
 
 <div class="choose">
@@ -279,7 +424,6 @@ At the top of the tower, the Elder sketches his enchantments, hoping that one da
 Choose
 
 </div>
-
 
 
 <!-- SETAS -->
@@ -291,7 +435,6 @@ Choose
 <img src="imagens/SetaDireita.png">
 
 </div>
-
 
 
 <!-- PERGAMINHOS -->
@@ -320,13 +463,16 @@ Choose
 </a>
 
 </div>
+
+
 <div class="rodape">
 
 The Elder’s Tower • Created by Edvaldo Oliveira<br>
 A childhood dream becoming reality
 
-
 </div>
 
+
 </body>
+
 </html>
