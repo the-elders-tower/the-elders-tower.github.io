@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
+<link rel="icon"
+type="image/png"
+href="imagens/favicon.png">
+<meta property="og:title" content="The Elder’s Tower">
+<meta property="og:site_name" content="The Elder’s Tower">
+<meta name="twitter:card" content="summary_large_image">
 
+<meta name="twitter:title" content="The Elder’s Tower">
+
+<meta name="twitter:description"
+content="Official hub of The Elder’s Tower and Once Upon a Time… After the End — a dark fairytale indie game project.">
+
+<meta name="twitter:image"
+content="https://eldoreste.github.io/theelderstower/imagens/social-preview.png">
+<meta property="og:description"
+content="Official hub of The Elder’s Tower and Once Upon a Time… After the End — a dark fairytale indie game project.">
+
+<meta property="og:image"
+content="https://eldoreste.github.io/theelderstower/imagens/social-preview.png">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url"
+content="https://eldoreste.github.io/theelderstower/">
+<meta name="format-detection" content="telephone=no">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google" content="notranslate">
 
 <title>The Elder’s Tower</title>
 
@@ -79,6 +105,19 @@ margin-top:2vh;
 
 }
 
+.areaLivro {
+
+position:absolute;
+
+right:26vw;
+
+top:6.5vh;
+
+width:10.4vw;
+
+max-width:200px;
+
+}
 
 /* LOGO */
 
@@ -191,13 +230,7 @@ width:100%;
 
 .livro {
 
-position:absolute;
-
-right:26vw;
-
-top:6.5vh;
-
-width:10.4vw;
+width:100%;
 
 }
 
@@ -208,9 +241,9 @@ width:10.4vw;
 
 position:absolute;
 
-top:7.5vh;
+top:22%;
 
-right:31.7vw;
+left:12%;
 
 font-size:0.85vw;
 
@@ -225,9 +258,9 @@ color:#4a2c00;
 
 position:absolute;
 
-top:7.5vh;
+top:22%;
 
-right:27vw;
+right:12%;
 
 font-size:0.85vw;
 
@@ -236,7 +269,6 @@ font-family:Georgia, serif;
 color:#4a2c00;
 
 }
-
 
 /* LINKS INTERAÇÃO */
 
@@ -331,7 +363,7 @@ margin-top:5vh;
 
 /* LIVRO SOCIAL MOBILE */
 
-.livro {
+.areaLivro {
 
 position:relative;
 
@@ -341,41 +373,37 @@ top:auto;
 
 width:40vw;
 
+max-width:220px;
+
+margin:auto;
+
 margin-top:25px;
 
 }
 
-
-/* LINKS MOBILE */
-
 .linksLivroEsquerda,
-.linksLivroDireita {
+.linksLivroDireita{
 
 position:absolute;
 
-top:14vw;
+top:30%;
 
 font-size:4vw;
 
-display:flex;
+}
 
-flex-direction:column;
+.linksLivroEsquerda{
 
-gap:4vw;
+left:12%;
 
 }
 
-.linksLivroEsquerda {
+.linksLivroDireita{
 
-left:28%;
-
-}
-
-.linksLivroDireita {
-
-right:28%;
+right:12%;
 
 }
+
 
 
 .linksLivroEsquerda {
@@ -385,6 +413,7 @@ margin-bottom:10px;
 }
 
 }
+
 
 </style>
 
@@ -396,38 +425,34 @@ margin-bottom:10px;
 
 <!-- LIVRO -->
 
+<div class="areaLivro">
+
 <img class="livro" src="imagens/LivroLinks.png">
-
-
-<!-- LINKS PAGINA ESQUERDA -->
 
 <div class="linksLivroEsquerda">
 
 <a href="https://www.youtube.com/@ATorreDoAnciao" target="_blank">YouTube</a>
-
 <a href="https://www.instagram.com/edvaldo_escritor" target="_blank">Instagram</a>
-
 <a href="https://www.reddit.com/user/eldoreste/" target="_blank">Reddit</a>
 
 </div>
 
-
-<!-- LINKS PAGINA DIREITA -->
-
 <div class="linksLivroDireita">
 
 <a href="https://discord.gg/gxEjfvEX" target="_blank">Discord</a>
-
 <a href="https://www.twitch.tv/the_elders_tower" target="_blank">Twitch</a>
-
 <a href="mailto:eldoreste@hotmail.com">E-mail</a>
+
+</div>
 
 </div>
 
 
 <!-- LOGO -->
 
-<img class="logo" src="imagens/LogoTransparente.png">
+<img class="logo"
+src="imagens/LogoTransparente.png"
+alt="The Elder’s Tower logo">
 
 
 <!-- FRASE -->
